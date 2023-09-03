@@ -2,6 +2,9 @@
 
 //JFrameクラスのインポート
 import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.Graphics;
+import java.awt.Color;
 
 public class racemap_1 {
 
@@ -19,6 +22,13 @@ public class racemap_1 {
 		//ウィンドウを表示する
 		frame.setVisible(true);
 	}
+	class DrawCanvas extends JPanel{
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+        //線を描画
+		g.setColor(Color.red);
+		g.drawLine(100,100,100,500);
+	}
+}
 	
-
 }

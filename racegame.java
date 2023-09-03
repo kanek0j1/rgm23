@@ -19,5 +19,6 @@ public class racegame {
 		//ウィンドウを表示する
 		frame.setVisible(true);
 	}
+	
 
 }
