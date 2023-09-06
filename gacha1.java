@@ -1,6 +1,9 @@
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
 import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
 
 public class gacha1 {
     
@@ -26,10 +29,10 @@ class gamewindow extends JFrame{
 }
 
 class DrawCanvas extends JPanel{
+	Image img = Toolkit.getDefaultToolkit().getImage("gachagacha.png");
     //Graphicsオブジェクトで描画。鉛筆みたいなものです。
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-        //線を描画
-		g.drawLine(100,100,200,200);
+        g.drawImage(img, 0, 0, this);
 	}
 }
