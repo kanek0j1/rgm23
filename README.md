@@ -4,3 +4,5 @@ Developing stationery racing games during summer vacation
 上の書いたのはこうき君です。
 いいえ、哲くんです。
 毎週金曜日はカレーの日！
+
+こんにちは
