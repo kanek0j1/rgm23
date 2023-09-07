@@ -21,13 +21,14 @@ public class racemap_1 {
 		frame.setResizable(false);
 		//ウィンドウを表示する
 		frame.setVisible(true);
+
 	}
 	class DrawCanvas extends JPanel{
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
         //線を描画
 		g.setColor(Color.red);
-		g.drawLine(100,100,100,500);
+		g.drawLine(100,200,100,200);
 	}
 }
 	
