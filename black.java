@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-public class Black {
+public class black {
 
     private JFrame frame; // ゲームウィンドウのフレーム
     private JPanel gamePanel; // ゲームプレイ画面のパネル
@@ -25,7 +25,7 @@ public class Black {
     public static void main(String[] args) {
         // ゲームを起動
         SwingUtilities.invokeLater(() -> {
-            Black game = new Black();
+            black game = new black();
             game.createAndShowGUI();
         });
     }
