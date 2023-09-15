@@ -187,6 +187,11 @@ public class black {
         playerScore += card; // スコアを更新
         playerScoreLabel.setText("プレイヤーのスコア: " + playerScore); // スコア表示を更新
         gamePanel.repaint(); // ゲーム画面を再描画
+
+        if (playerScore >= 21) {
+            dealerTurn(); // プレイヤーのスコアが21以上ならディーラーのターンに移行
+            determineWinner(); // 勝者を判定
+        }
     }
 
     private void drawDealerCard() {
