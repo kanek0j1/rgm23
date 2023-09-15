@@ -44,10 +44,13 @@ public class Black {
         };
         gamePanel.setPreferredSize(new Dimension(800, 600));
 
+        // スコア表示用ラベルを初期化
+        playerScoreLabel = new JLabel("プレイヤーのスコア: 0");
+        dealerScoreLabel = new JLabel("ディーラーのスコア: 0");
+
         // ボタンやスコア表示用ラベルを設定
         hitButton = new JButton("ヒット");
         standButton = new JButton("スタンド");
-
 
         // ボタンのクリックイベントを設定
         setupButton(hitButton, new ActionListener() {
@@ -61,8 +64,8 @@ public class Black {
             public void actionPerformed(ActionEvent e) {
                 dealerTurn();
                 determineWinner();
-            }});
-
+            }
+        });
 
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(hitButton);
@@ -81,14 +84,12 @@ public class Black {
         initializeGame();
     }
 
-
-    
     private void drawCards(Graphics g) {
 
         g.drawString("プレイヤー スコア: " + playerScore, 50, 480);
         int x = 50;
         int y = 300;
-    
+
         // プレイヤーの手札を描画
         for (int i = 0; i < playerCardCount; i++) {
             int cardIndex = playerCards[i]; // カードの値（1から13）
@@ -101,7 +102,7 @@ public class Black {
         g.drawString("ディーラー スコア: " + dealerScore, 50, 30);
         x = 50;
         y = 50;
-    
+
         // ディーラーの手札を描画
         for (int i = 0; i < dealerCardCount; i++) {
             int cardIndex = dealerCards[i];
@@ -114,7 +115,6 @@ public class Black {
 
     private void initializeGame() {
         cardImages = new HashMap<>(); // カード画像を格納するMapを初期化
-
 
         String[] cardNames = {
             "spade_Q.png", "BackSide.png", "club_2.png", "club_3.png", "club_4.png",
@@ -149,9 +149,6 @@ public class Black {
         drawDealerCard();
         drawDealerCard();
     }
-
-
-    
 
     private String getCardName(int cardIndex) {
         String cardName = "";
@@ -205,9 +202,6 @@ public class Black {
         gamePanel.repaint(); // ゲーム画面を再描画
     }
 
-    private synchronized void setGameOver(boolean gameOver) {
-    }
-    
     private int getRandomCard() {
         Random random = new Random();
         return random.nextInt(13) + 1; // 1から13までのランダムなカードを返す
@@ -217,11 +211,13 @@ public class Black {
         while (dealerScore < 17) {
             drawDealerCard(); // ディーラーはスコアが17以上になるまでカードを引く
         }
-    
+
         setGameOver(true); // ゲームオーバーフラグを立てる
         determineWinner(); // ゲーム結果を判定
     }
-    
+
+    private void setGameOver(boolean b) {
+    }
 
     private void determineWinner() {
         String result = "";
