@@ -208,8 +208,8 @@ public class black {
     }
 
     private void dealerTurn() {
-        while (dealerScore < 17) {
-            drawDealerCard(); // ディーラーはスコアが17以上になるまでカードを引く
+        while (dealerScore < 16) {
+            drawDealerCard(); // ディーラーはスコアが16以上になるまでカードを引く
         }
 
         setGameOver(true); // ゲームオーバーフラグを立てる
