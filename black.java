@@ -187,6 +187,11 @@ public class black {
         playerScore += card; // スコアを更新
         playerScoreLabel.setText("プレイヤーのスコア: " + playerScore); // スコア表示を更新
         gamePanel.repaint(); // ゲーム画面を再描画
+
+        if (playerScore >= 21) {
+            dealerTurn(); // プレイヤーのスコアが21以上ならディーラーのターンに移行
+            determineWinner(); // 勝者を判定
+        }
     }
 
     private void drawDealerCard() {
@@ -203,8 +208,8 @@ public class black {
     }
 
     private void dealerTurn() {
-        while (dealerScore < 17) {
-            drawDealerCard(); // ディーラーはスコアが17以上になるまでカードを引く
+        while (dealerScore < 16) {
+            drawDealerCard(); // ディーラーはスコアが16以上になるまでカードを引く
         }
 
         setGameOver(true); // ゲームオーバーフラグを立てる
